@@ -1,0 +1,53 @@
+@import './base.css';
+@import 'tailwindcss';
+@import "tailwindcss-primeui";
+
+@theme {
+  --font-display: 'Light Novel POP v2', 'sans-serif';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: gray;
+}
+
+p{
+  line-height: 130%;
+}
+
+@font-face {
+  font-family: 'IM Fell English SC';
+  font-style: normal;
+  font-display: swap;
+  src: url('src/assets/fonts/IMFellEnglishSC-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Light Novel POP v2';
+  font-style: normal;
+  font-display: swap;
+  src: url('src/assets/fonts/LightNovelPOPv2.otf');
+}
+
+@font-face {
+  font-family: 'Mochiy Pop One';
+  font-style: normal;
+  font-display: swap;
+  src: url('src/assets/fonts/MochiyPopOne-Regular.ttf');
+}
+
+a {
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.nav-bar li {
+  padding: 10px;
+}
+
+.font-display {
+  color: black;
+}
