@@ -1,21 +1,34 @@
-<script setup>
-import Button from 'primevue/button'
-</script>
-<script>
-import Header from './components/Header.vue'
-
-
-export default {
-  components: {
-    Header,
-  },
-};
-</script>
-
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
 <template>
   <div>
-    <Header />
-    <router-view></router-view>
+    <transition name="fade">
+      <SplashScreen v-if="showSplash" :gifSrc="`/images/background/hololive-sync-splash.gif?t=${Date.now()}`" />
+    </transition>
+      <router-view  />
   </div>
 </template>
+
+<script setup>
+import SplashScreen from './components/Splashscreen.vue'
+import { ref, onMounted } from 'vue'
+
+const showSplash = ref(true)
+
+onMounted(() => {
+  setTimeout(() => {
+    showSplash.value = false
+  }, 2500) // 1 second = 1000ms
+})
+</script>
+
+<style scoped>
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

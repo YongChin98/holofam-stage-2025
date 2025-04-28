@@ -3,7 +3,10 @@
 @import "tailwindcss-primeui";
 
 @theme {
-  --font-display: 'Light Novel POP v2', 'sans-serif';
+  --font-display: 'Mokoto', 'sans-serif';
+  --font-glitch: 'Mokoto Glitch 2', 'sans-serif';
+  --font-breath: 'Breathing', 'sans-serif';
+  --font-desc: 'Helvetica', 'sans-serif';
 }
 
 html {
@@ -19,25 +22,33 @@ p{
 }
 
 @font-face {
-  font-family: 'IM Fell English SC';
+  font-family: 'Helvetica';
   font-style: normal;
   font-display: swap;
-  src: url('src/assets/fonts/IMFellEnglishSC-Regular.ttf');
+  src: url('/fonts/Helvetica.ttf');
 }
 
 @font-face {
-  font-family: 'Light Novel POP v2';
+  font-family: 'Breathing';
   font-style: normal;
   font-display: swap;
-  src: url('src/assets/fonts/LightNovelPOPv2.otf');
+  src: url('/fonts/Breathing.ttf');
 }
 
 @font-face {
-  font-family: 'Mochiy Pop One';
+  font-family: 'Mokoto Glitch 2';
   font-style: normal;
   font-display: swap;
-  src: url('src/assets/fonts/MochiyPopOne-Regular.ttf');
+  src: url('/fonts/MokotoGlitchMark2.ttf');
 }
+
+@font-face {
+  font-family: 'Mokoto';
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/mokoto.regular.ttf');
+}
+
 
 a {
   text-decoration: none;
@@ -46,8 +57,4 @@ a {
 
 .nav-bar li {
   padding: 10px;
-}
-
-.font-display {
-  color: black;
 }

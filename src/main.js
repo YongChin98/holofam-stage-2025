@@ -12,7 +12,6 @@ import {createI18n} from 'vue-i18n'
 import en from './assets/locales/en.json'
 import jp from './assets/locales/jp.json'
 
-
 const app = createApp(App);
 
 const i18n = createI18n({

@@ -13,10 +13,5 @@ export default defineConfig({
     vueDevTools(),
     tailwindcss(),
     svgLoader()
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    },
-  },
+  ]
 })
