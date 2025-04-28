@@ -1,4 +1,4 @@
-name: Deploy Vue App to FTP
+name: Deploy App to FTP
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.holofam.org
           username: ${{ secrets.FTP_USERNAME }}
