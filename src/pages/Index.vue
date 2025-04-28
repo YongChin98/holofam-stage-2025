@@ -50,6 +50,7 @@
       <p class="text-sm pt-1 pb-3 font-desc text-center md:text-lg">
         {{currentFund}} / {{targetFund}} MYR
       </p>
+      
       <div class="w-full text-center pt-5">
         <button
           class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-display border-neon rounded-lg group bg-gradient-to-br from-[#771298] to-pink-500 group-hover:from-[#771298] group-hover:to-pink-500 text-white"
