@@ -1,6 +1,6 @@
 @import './base.css';
 @import 'tailwindcss';
-@import "tailwindcss-primeui";
+@import 'tailwindcss-primeui';
 
 @theme {
   --font-display: 'Mokoto', 'sans-serif';
@@ -17,7 +17,7 @@ body {
   background-color: gray;
 }
 
-p{
+p {
   line-height: 130%;
 }
 
@@ -49,7 +49,6 @@ p{
   src: url('/fonts/mokoto.regular.ttf');
 }
 
-
 a {
   text-decoration: none;
   transition: 0.4s;
@@ -57,4 +56,16 @@ a {
 
 .nav-bar li {
   padding: 10px;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.text-white-trans {
+  color: rgba(255, 255, 255, 0.8);
 }

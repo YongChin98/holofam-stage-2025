@@ -18,7 +18,7 @@
               style="--neon-color:rgba(255,255,255,0.3)">
               {{ $t('Fan Project') }}
             </p>
-            <p class="text-sm pt-1 font-display text-center md:text-2xl">
+            <p class="text-sm pt-1 font-display text-center text-white-trans md:text-2xl">
               {{ $t('Together We Cheer For Hololive') }}
             </p>
             <p class="text-5xl pt-[50px] pb-[50px] font-breath text-center text-[#FFA8DE] text-neon md:text-[150px]"
@@ -32,31 +32,30 @@
   </div>
   <!-- Section 2-->
   <div class="pt-10 flex justify-center bg-[#180C33]">
-    <section id="section2" class="pl-[15%] pr-[10%] pb-[150px] w-full"
+    <section id="section2" class="pl-[15%] pr-[10%] pb-[75px] w-full"
       v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000' }">
       <p class="text-xl font-display text-center text-white text-neon md:text-[75px]"
         style="--neon-color:rgba(255,255,255,0.3)">
         {{ $t('Target') }}
       </p>
-      <p class="text-sm pt-1 pb-2 font-desc text-center md:text-2xl">
+      <p class="text-sm pt-1 pb-2 font-desc text-center text-white-trans md:text-2xl">
         {{ $t('Project Vision') }}
       </p>
-      <p class="text-sm pt-1 pb-5 font-desc text-center md:text-xl">
+      <p class="text-sm pt-1 pb-5 font-desc text-center text-white-trans md:text-xl">
         {{ $t('Project Mission') }}
       </p>
       <div class="w-full border-neon bg-[#2C153F] rounded-full h-2.5" style="--neon-color:rgba(255,255,255,0.3)">
         <div class="bg-[#FFA8DE] h-2.5 rounded-full" :style="{ width: progressWidth + '%' }"></div>
       </div>
-      <p class="text-sm pt-1 pb-3 font-desc text-center md:text-lg">
-        {{currentFund}} / {{targetFund}} MYR
+      <p class="text-sm pt-1 pb-3 font-desc text-center text-white-trans md:text-lg">
+        {{ currentFund }} / {{ targetFund }} MYR
       </p>
-      
       <div class="w-full text-center pt-5">
         <button
           class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-display border-neon rounded-lg group bg-gradient-to-br from-[#771298] to-pink-500 group-hover:from-[#771298] group-hover:to-pink-500 text-white"
           style="--neon-color:rgba(255,255,255,0.3)">
           <span
-            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
             {{ $t('Crowdfunding Link') }}
           </span>
         </button>
@@ -65,9 +64,9 @@
   </div>
   <!-- Section 3 -->
   <div class="pt-10 flex justify-center bg-[#A980AC]">
-    <section id="section5" class="pl-[15%] pr-[10%] pb-[100px] w-full flex"
+    <section id="section5" class="pl-[15%] pr-[10%] pb-[100px] w-full md:flex"
       v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000' }">
-      <div class="w-[30%] flex flex-col items-center">
+      <div class="w-full md:w-[30%] pb-10 md:flex md:flex-col md:items-center md:pb-0">
         <p class="text-2xl font-display text-center text-white text-neon md:text-5xl"
           style="--neon-color:rgba(255,255,255,0.3)"
           v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000' }">
@@ -83,29 +82,30 @@
           </div>
         </div>
       </div>
-      <div class="w-[70%] flex flex-col items-center">
+      <div class="w-full md:w-[70%] flex flex-col items-center">
         <p class="text-2xl font-display text-center text-white text-neon md:text-5xl"
           style="--neon-color:rgba(255,255,255,0.3)"
           v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000' }">
           {{ $t('Fan Message') }}
         </p>
         <MessageCarousel :messages="fanMessages" />
+        <p class="font-desc pt-3 text-white-trans">Total of {{ contribution }} person has supported</p>
         <div class="flex pt-8">
-          <button
-          class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-display border-neon rounded-lg group bg-gradient-to-br from-[#771298] to-pink-500 group-hover:from-[#771298] group-hover:to-pink-500 text-white"
-          style="--neon-color:rgba(255,255,255,0.3)">
-          <span
-            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-            {{ $t('See All') }}
-          </span>
-        </button>
+          <button @click="showModal = true"
+            class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-display border-neon rounded-lg group bg-gradient-to-br from-[#771298] to-pink-500 group-hover:from-[#771298] group-hover:to-pink-500 text-white"
+            style="--neon-color:rgba(255,255,255,0.3)">
+            <span
+              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+              {{ $t('See All') }}
+            </span>
+          </button>
         </div>
       </div>
     </section>
   </div>
   <!-- Section 4-->
   <div class="pt-10 flex justify-center bg-[#813a8d]">
-    <section id="section4" class="pl-[15%] pr-[10%] pb-[150px]">
+    <section id="section4" class="pl-[15%] pr-[10%] pb-[75px] md:pb-[150px]">
       <p class="text-2xl font-display text-center text-white text-neon md:text-[75px]"
         style="--neon-color:rgba(255,255,255,0.3)"
         v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000' }">
@@ -206,9 +206,9 @@
               <h2 class="text-[#FFA8DE] text-2xl font-breath">To Be Confirm</h2>
             </div>
             <div class="flex flex-col items-center pb-10">
-              <span class="text-2xl font-display p-[10%]">{{ $t('Artist') }}</span>
+              <span class="text-2xl font-display p-[10%] text-white">{{ $t('Artist') }}</span>
               <img class="w-45 h-45 mb-5 rounded-full shadow-lg" src="/images/illustrator.webp" alt="Artist" />
-              <p class="mb-1 text-4xl font-display p-5 dark:text-white">Artist Name</p>
+              <p class="mb-1 text-4xl font-display p-5 text-white">Artist Name</p>
               <div class="flex w-full items justify-evenly">
                 <!-- Twitter Icon-->
                 <button type="button" data-twe-ripple-init data-twe-ripple-color="light" title="x-button"
@@ -246,7 +246,7 @@
               </div>
             </div>
           </SplitterPanel>
-          <SplitterPanel class="text-2xl flex items-center font-display justify-center bg-[#2C153F] p-3" :size="10">
+          <SplitterPanel class="text-2xl flex items-center font-display justify-center text-white bg-[#2C153F] p-3" :size="10">
             {{ $t('Freebies') }}
           </SplitterPanel>
           <SplitterPanel :size="85">
@@ -254,7 +254,7 @@
               <div class="p-3 bg-[#813a8d]">
                 <div class="flex justify-center flex-col items-center">
                   <img src="/images/freebies/lanyard-mockup.png" class="w-[70%] p-5" />
-                  <p class="text-2xl font-display text-center">
+                  <p class="text-2xl text-white font-display text-center">
                     {{ $t('Landyard + Card Holder') }}
                   </p>
                 </div>
@@ -264,7 +264,7 @@
               <div class="p-3 bg-[#813a8d]">
                 <div class="flex justify-center flex-col items-center">
                   <img src="/images/freebies/postcard-mockup.png" class="w-[70%] p-5" />
-                  <p class="text-2xl font-display text-center">
+                  <p class="text-2xl text-white font-display text-center">
                     {{ $t('Postcard') }}
                   </p>
                 </div>
@@ -277,7 +277,7 @@
   </div>
   <!-- Section 5 -->
   <div class="pt-10 flex justify-center bg-[#A980AC]">
-    <section id="section5" class="pl-[15%] pr-[10%] pb-[150px] w-full"
+    <section id="section5" class="pl-[15%] pr-[10%] pb-[75px] w-full"
       v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-b-8 animate-duration-1000' }">
       <div class="flex flex-col items-center">
         <p class="text-2xl font-display text-center text-white text-neon md:text-5xl"
@@ -290,8 +290,41 @@
     </section>
   </div>
   <!-- Footer -->
-  <div class="pt-10 pb-5 flex justify-center bg-[#A980AC]">
-    <p class="font-desc italic">{{ $t('Fanmade Declaration') }}</p>
+  <div class="p-10 flex justify-center bg-[#A980AC]">
+    <p class="font-desc italic text-center">{{ $t('Fanmade Declaration') }}</p>
+  </div>
+  <!-- Message Model -->
+  <div v-if="showModal" class="fixed inset-0 flex items-center justify-center z-50 w-full"
+    style="background: rgba(0, 0, 0, 0.8);">
+    <div class="p-10 w-full h-full flex flex-col items-center">
+      <h2 class="text-xl font-semibold mb-4 text-center font-display text-white md:text-5xl text-neon"
+        style="--neon-color:rgba(255,255,255,0.3)">{{ $t('Fan Message Board') }}</h2>
+      <div
+        class="bg-[rgb(253,200,255)] rounded-2xl shadow-xl pl-6 pr-6 pb-10 relative w-[95%] md:w-[80%] max-h-[80%] overflow-y-scroll scrollbar-hide border-neon md:flex md:flex-wrap"
+        style="--neon-color:rgba(255,255,255,0.3)">
+        <div class="pt-5 md:w-1/3 flex flex-col items-center" v-for="message in fanMessages">
+          <div class="w-[90%]">
+            <p class="text-gray-800">{{ message.name }}</p>
+            <div class="flex items-start gap-2.5">
+              <div
+                class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white"> "{{ message.message }}"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center space-x-2 pt-10">
+        <button @click="showModal = false"
+          class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-display border-neon rounded-lg group bg-gradient-to-br from-[#771298] to-pink-500 group-hover:from-[#771298] group-hover:to-pink-500 text-white"
+          style="--neon-color:rgba(255,255,255,0.3)">
+          <span
+            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+            {{ $t('Close') }}
+          </span>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 <style scoped>
@@ -323,6 +356,8 @@ let fanMessages = ref([]);
 let targetFund = ref();
 let currentFund = ref();
 let progressWidth = ref();
+let contribution = ref();
+const showModal = ref(false);
 
 const jsonUrl = 'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjB5guW7pyX4fS8F3sVA1l5kEYuwlj4CtJePBaIZ2aJtFEfDaua5l76gcIvOtt9gn5OKLgyVlY4fRrz39EC9KBUluEZ-0OOwtmKAZuHR1JK6myuIR93w_9acdlQ4SWq7e5Yx6dd2yaL3lpeZYejbUgTU6EB1XCm8WJ904Ao9g3NU2khfyOuBEgUApWG0smrAOS2ISru5Glz-TaWCXsFRZh08xxJAxPFgeLJso7HlXmRTveyUo0a-6NoLo4MaE_dSszbj11p8JWCTM7zsZ6pOQAiu_roOg&lib=Mxo4o13p51329Ypej5b31prONwxaIsT7L'; // <-- your JSON URL
 
@@ -333,6 +368,7 @@ onMounted(async () => {
     fanMessages.value = data["fanMessage"];
 
     var configData = data["config"];
+    contribution = data["fanMessage"].length;
     targetFund = configData.targetFund;
     currentFund = configData.currentFund;
     progressWidth = currentFund / targetFund * 100;
